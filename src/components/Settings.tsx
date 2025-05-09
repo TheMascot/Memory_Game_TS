@@ -19,7 +19,7 @@ function Settings({ dispatch, dataStore }: Props) {
       <p className="text-center font-bold underline-offset-2 underline">Settings</p>
       <p className="text-center">I'm searching for...</p>
       <div className="flex flex-col justify-center ml-auto mr-auto gap-1">
-        {/* generate these buttons from an object with map() */}
+        {/* generate these buttons from an object with map() TODO */}
         <Button
           id="pairs"
           data="searchFor"

@@ -47,5 +47,3 @@ function MainMenu({ dispatch, dataStore, userName, setUserName }: Props) {
 }
 
 export default MainMenu;
-
-// Setting for time before not-matching card turnback

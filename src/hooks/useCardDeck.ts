@@ -49,6 +49,7 @@ export function useCardDeck(searchMode: number, requiredCards: number, cardsNum:
     }
   }, [clickedCards, searchMode, imageData, cardsNum, foundCardNum, gameOver]);
 
+  // Checking if game is over, stopping the clock
   useEffect(() => {
     if (gameOver) {
       pause();

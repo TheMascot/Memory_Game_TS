@@ -26,15 +26,11 @@ function Gameplay({ userName }: Params) {
 
   const activeCardsNum: number = imageData.length;
 
-  // need shuffler
-
-  // MORE FEATURE
+  // MORE FEATURE TODO
   // rush mode where counter counts down from card/2 and every pair adds 5 seconds; score is plain 10 for pairs plus current seconds remaining
 
   return (
     <>
-      {/* Need to manage different sizes of screens, have to center the field on wide screens */}
-      {/* Adjust margins based on requiredCards data */}
       <div
         className={`grid 'grid-cols-6'grid-rows-[10vh,90vh] mb-auto mt-auto mr-auto ml-auto bg-slate-900 gap-2 ${
           activeCardsNum <= 12
@@ -66,7 +62,6 @@ function Gameplay({ userName }: Params) {
         )}
         <ul
           id="card-field"
-          // Need some conditional styling on card size based on number of cards on screen
           className={`col-span-full row-start-2 grid grid-cols-[repeat(auto-fit,_minmax(14vw,_1fr))] sm:grid-cols-[repeat(auto-fit,_minmax(12vw,_1fr))] md:grid-cols-[repeat(auto-fit,_minmax(9vw,_1fr))] lg:grid-cols-[repeat(auto-fit,_minmax(9vw,_1fr))] xl:grid-cols-[repeat(auto-fit,_minmax(8vw,_1fr))] 2xl:grid-cols-[repeat(auto-fit,_minmax(7vw,_1fr))] gap-2.5 ${
             gameOver ? 'opacity-50' : ''
           }`}
@@ -82,5 +77,3 @@ function Gameplay({ userName }: Params) {
   );
 }
 export default Gameplay;
-
-// continue to check chatGPT to refactor code

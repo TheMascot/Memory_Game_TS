@@ -16,12 +16,9 @@ function TitleUserAndScores({ userName, setUserName }: Props) {
   const storedTime = localStorage.getItem(`${userName}-time`);
   console.log(storedPoints);
 
-  // useEffect(() => {
-  //   storedPoints = localStorage.getItem(`${userName}-score`);
-  // }, [userName, storedPoints]);
-
   return (
     <div className="flex flex-col justify-evenly">
+      {/* Title */}
       <div className="flex justify-around ml-auto mr-auto py-5 text-amber-500 font-bold tracking-widest">
         {['M', 'E', 'M', 'O', 'R', 'Y'].map((letter, i) => (
           <div key={i} className={titleLetterStyling}>
@@ -37,6 +34,7 @@ function TitleUserAndScores({ userName, setUserName }: Props) {
         ))}
       </div>
       <div className="flex justify-evenly border-t-2 border-b-2 border-slate-800 pt-2 pb-2">
+        {/* Name display or input fields */}
         <form className="w-45 text-lg">
           {typeNewName ? (
             <div>
