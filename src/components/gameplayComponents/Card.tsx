@@ -19,7 +19,7 @@ function Card({ cardObject, onClick }: Props) {
 
   return (
     <img
-      className={`rounded-xl overflow-hidden shadow-lg aspect-square ${foundCardsStyle}`}
+      className={`rounded-xl overflow-hidden shadow-lg aspect-square ${foundCardsStyle} `}
       onClick={onClick}
       src={cardObject.clicked || cardObject.found ? cardObject.src : cardBackImage}
     ></img>

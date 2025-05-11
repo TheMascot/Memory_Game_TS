@@ -7,19 +7,18 @@ type Props = {
 };
 
 const titleLetterStyling =
-  'inset-ring-2 inset-ring-blue-950/70 rounded-lg text-center shadow-md shadow-blue-950 text-3xl sm:text-4xl md:text-5xl lg:text-5xl mr-1 sm:mr-1 md:mr-1 pb-1.5 pl-1.5 pr-2 inset-shadow-red-900 inset-shadow-lg w-10 xs:w-13 sm:w-13 md:w-15';
+  'inset-ring-2 inset-ring-blue-950/70 rounded-lg text-center shadow-md shadow-blue-950 bg-blue-700 text-3xl sm:text-4xl md:text-5xl lg:text-5xl mr-1 sm:mr-1 md:mr-1 pb-1.5 pl-1.5 pr-2 inset-shadow-red-900 inset-shadow-lg w-10 xs:w-13 sm:w-13 md:w-15';
 
 function MenuHeader({ userName, setUserName }: Props) {
   const [typeNewName, setTypeNewName] = useState<boolean>(false);
   const [newUserName, setnewUserName] = useState<string>('');
   const storedPoints = localStorage.getItem(`${userName}-score`);
   const storedTime = localStorage.getItem(`${userName}-time`);
-  console.log(storedPoints);
 
   return (
     <div className="flex flex-col justify-evenly">
       {/* Title */}
-      <div className="flex justify-around ml-auto mr-auto py-5 text-amber-500 font-bold tracking-widest">
+      <div className="flex animate justify-around ml-auto mr-auto py-5 text-amber-500 font-bold tracking-widest ">
         {['M', 'E', 'M', 'O', 'R', 'Y'].map((letter, i) => (
           <div key={i} className={titleLetterStyling}>
             {letter}

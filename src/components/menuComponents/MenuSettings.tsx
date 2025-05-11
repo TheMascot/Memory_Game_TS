@@ -15,7 +15,7 @@ function MenuSettings({ dispatch, dataStore }: Props) {
   }
 
   return (
-    <div className="flex flex-1/3 flex-col justify-evenly ml-auto mr-auto gap-1 pr-1 text-md xs:text-md sm:text-lg md:text-xl">
+    <div className="flex flex-1/3 flex-col justify-evenly ml-auto mr-auto gap-1 pr-1 text-md xs:text-md sm:text-lg">
       <p className="text-center font-bold underline-offset-2 underline">Settings</p>
       <p className="text-center">I'm searching for...</p>
       <div className="flex flex-col justify-center ml-auto mr-auto gap-1">
