@@ -6,7 +6,7 @@ type Props = {
   userName: string;
 };
 
-function GameOver({ searchFor, scoreType, score, time, userName }: Props) {
+function GameOverModal({ searchFor, scoreType, score, time, userName }: Props) {
   if (userName !== 'Unnamed Player') {
     if (scoreType === 'time') {
       localStorage.setItem(`${userName}-time`, time);
@@ -28,4 +28,4 @@ function GameOver({ searchFor, scoreType, score, time, userName }: Props) {
   );
 }
 
-export default GameOver;
+export default GameOverModal;

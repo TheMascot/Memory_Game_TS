@@ -1,9 +1,9 @@
 import { useParams } from 'react-router';
-import { type InitialState } from '../App';
-import Card from '../components/Card';
-import { useCardDeck } from '../hooks/useCardDeck';
+import { type InitialState } from '../../App';
+import Card from '../../components/gameplayComponents/Card';
+import { useCardDeck } from '../../hooks/useCardDeck';
 import GameInfoBar from './GameInfoBar';
-import GameOver from '../components/GameOver';
+import GameOverModal from '../../components/gameplayComponents/GameOverModal';
 
 type Params = {
   userName: string;
@@ -21,7 +21,7 @@ function Gameplay({ userName }: Params) {
     score,
     seconds,
     minutes,
-    gameOver,
+    isGameOver,
   } = useCardDeck(searchMode, requiredCards, Number(cardsNum));
 
   const activeCardsNum: number = imageData.length;
@@ -49,8 +49,8 @@ function Gameplay({ userName }: Params) {
           requiredCards={requiredCards}
           resetGame={resetGame}
         />
-        {gameOver ? (
-          <GameOver
+        {isGameOver ? (
+          <GameOverModal
             userName={userName}
             searchFor={searchFor}
             scoreType={scoreType}
@@ -63,7 +63,7 @@ function Gameplay({ userName }: Params) {
         <ul
           id="card-field"
           className={`col-span-full row-start-2 grid grid-cols-[repeat(auto-fit,_minmax(14vw,_1fr))] sm:grid-cols-[repeat(auto-fit,_minmax(12vw,_1fr))] md:grid-cols-[repeat(auto-fit,_minmax(9vw,_1fr))] lg:grid-cols-[repeat(auto-fit,_minmax(9vw,_1fr))] xl:grid-cols-[repeat(auto-fit,_minmax(8vw,_1fr))] 2xl:grid-cols-[repeat(auto-fit,_minmax(7vw,_1fr))] gap-2.5 ${
-            gameOver ? 'opacity-50' : ''
+            isGameOver ? 'opacity-50' : ''
           }`}
         >
           {imageData.map((image) => (

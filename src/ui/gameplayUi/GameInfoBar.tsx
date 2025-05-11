@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
-import Timer from '../components/Timer';
-import Score from '../components/Score';
+import DisplayTimer from '../../components/gameplayComponents/DisplayTimer';
+import DisplayScore from '../../components/gameplayComponents/DisplayScore';
 
 type Props = {
   scoreType: string;
@@ -18,8 +18,8 @@ function GameInfoBar({ scoreType, seconds, minutes, score, resetGame }: Props) {
       id="infotab"
       className="row-start-1 h-[10vh] border-b-2 border-slate-700 col-span-full flex justify-around"
     >
-      {scoreType === 'clicks' && <Score score={score} />}
-      {scoreType === 'time' && <Timer minutes={minutes} seconds={seconds} />}
+      {scoreType === 'clicks' && <DisplayScore score={score} />}
+      {scoreType === 'time' && <DisplayTimer minutes={minutes} seconds={seconds} />}
       <span
         className="hover:cursor-pointer text-sm xs:text-md sm:text-md md:text-lg lg:text-xl mt-auto mb-auto text-amber-500 border-2 border-amber-600 bg-slate-700 rounded-lg p-2"
         onClick={resetGame}

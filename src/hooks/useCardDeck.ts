@@ -15,7 +15,7 @@ export function useCardDeck(searchMode: number, requiredCards: number, cardsNum:
 
   const { seconds, minutes, reset: resetStopWatch, pause } = useStopwatch();
 
-  const gameOver: boolean = foundCardNum * searchMode === cardsNum;
+  const isGameOver: boolean = foundCardNum * searchMode === cardsNum;
 
   //Initial deck creation
   useEffect(() => {
@@ -47,14 +47,14 @@ export function useCardDeck(searchMode: number, requiredCards: number, cardsNum:
         setClickedCards([]);
       }
     }
-  }, [clickedCards, searchMode, imageData, cardsNum, foundCardNum, gameOver]);
+  }, [clickedCards, searchMode, imageData, cardsNum, foundCardNum, isGameOver]);
 
   // Checking if game is over, stopping the clock
   useEffect(() => {
-    if (gameOver) {
+    if (isGameOver) {
       pause();
     }
-  }, [gameOver, pause]);
+  }, [isGameOver, pause]);
 
   // Handling each click
   function handleCardClick(id: number) {
@@ -100,6 +100,6 @@ export function useCardDeck(searchMode: number, requiredCards: number, cardsNum:
     score,
     seconds,
     minutes,
-    gameOver,
+    isGameOver,
   };
 }

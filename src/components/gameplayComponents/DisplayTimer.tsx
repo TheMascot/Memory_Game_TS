@@ -3,7 +3,7 @@ type Props = {
   seconds: number;
 };
 
-export function Timer({ minutes, seconds }: Props) {
+export function DisplayTimer({ minutes, seconds }: Props) {
   return (
     <div className="flex flex-col justify-start mt-auto mb-auto">
       <h1 className="ml-auto mr-auto text-sm md:text-lg lg:text-xl text-amber-500">⏱ Timer</h1>
@@ -14,4 +14,4 @@ export function Timer({ minutes, seconds }: Props) {
   );
 }
 
-export default Timer;
+export default DisplayTimer;

@@ -1,11 +1,11 @@
-import Button from './Button';
-import { type Action } from '../App';
-import { type InitialState } from '../App';
+import Button from '../sharedComponents/Button';
+import { type Action } from '../../App';
+import { type InitialState } from '../../App';
 type Props = {
   dispatch: React.Dispatch<Action>;
   dataStore: InitialState;
 };
-function Settings({ dispatch, dataStore }: Props) {
+function MenuSettings({ dispatch, dataStore }: Props) {
   function handleSettingsChange(event: React.MouseEvent<HTMLButtonElement>) {
     const target = event.target as HTMLButtonElement;
     const family = target.dataset.family as Action['type'];
@@ -97,4 +97,4 @@ function Settings({ dispatch, dataStore }: Props) {
   );
 }
 
-export default Settings;
+export default MenuSettings;

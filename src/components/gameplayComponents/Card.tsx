@@ -1,4 +1,4 @@
-import { cardBackImage } from '../utils/mockDatabase';
+import { cardBackImage } from '../../utils/mockDatabase';
 
 interface Props {
   cardObject: {

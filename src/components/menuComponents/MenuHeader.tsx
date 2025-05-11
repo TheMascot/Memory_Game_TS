@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Button from './Button';
+import Button from '../sharedComponents/Button';
 
 type Props = {
   userName: string;
@@ -9,7 +9,7 @@ type Props = {
 const titleLetterStyling =
   'inset-ring-2 inset-ring-blue-950/70 rounded-lg text-center shadow-md shadow-blue-950 text-3xl sm:text-4xl md:text-5xl lg:text-5xl mr-1 sm:mr-1 md:mr-1 pb-1.5 pl-1.5 pr-2 inset-shadow-red-900 inset-shadow-lg w-10 xs:w-13 sm:w-13 md:w-15';
 
-function TitleUserAndScores({ userName, setUserName }: Props) {
+function MenuHeader({ userName, setUserName }: Props) {
   const [typeNewName, setTypeNewName] = useState<boolean>(false);
   const [newUserName, setnewUserName] = useState<string>('');
   const storedPoints = localStorage.getItem(`${userName}-score`);
@@ -87,4 +87,4 @@ function TitleUserAndScores({ userName, setUserName }: Props) {
   );
 }
 
-export default TitleUserAndScores;
+export default MenuHeader;

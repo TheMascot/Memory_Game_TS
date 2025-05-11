@@ -1,9 +1,9 @@
 import { useReducer, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router';
-import About from './ui/About';
-import Gameplay from './ui/Gameplay';
-import MainMenu from './ui/MainMenu';
-import NotFound from './ui/NotFound';
+import AboutPage from './ui/menuUi/AboutPage';
+import Gameplay from './ui/gameplayUi/Gameplay';
+import MainMenu from './ui/menuUi/MainMenu';
+import NotFound from './ui/sharedUi/NotFound';
 
 export type InitialState = typeof initialState;
 
@@ -48,7 +48,7 @@ function App() {
             />
           }
         />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<AboutPage />} />
         <Route
           path="/game/:cardsNum/:searchFor/:scoreType"
           element={<Gameplay userName={userName} />}
